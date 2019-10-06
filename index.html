@@ -7,6 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+      /*this 值------------------------------------------------------------------------------------------------------------------*/
+      //this 函数中一个特殊变量，所有函数中都有this，在实际开发时有特殊意义，使用this会很方便。
+      //构造函数中
+      //例
+      var lilei = {high:180,age:20,color:'white'};
+      var hanmeimei = {high:170,age:23,color:'yellow'};
+      //Person  构造函数，创建人的对象。
+      function Person(){
+          //在函数体里定义对象的模板
+        this.high = 180;
+        this.age = 20;
+        this.color ='white' ;
+        //这里的this就是要创建的对象
+      }
+      var lilei=new Person();
+      console.log(lilei);
+      //在方法中
+      var obj={
+          talk:function(){
+            //这里的this是指谁调用的方法，this就是谁。
+          }
+      }
+      obj.this();
+      //普通函数
+      function foo(){
+          console.log(this);
+          //在普通函数中，this代表的是window对象
+      }
+      foo();
+      var f=new foo();
+      //此时的this为f,因为此时是构造函数
+    </script>
 </body>
 </html>
